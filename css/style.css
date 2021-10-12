@@ -1,0 +1,23 @@
+.menu {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin-top: 120px;
+}
+
+#btn-index {
+    height: 180px; 
+    width: 280px; 
+    display:flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    background-color: #1565C0;
+}
+
+#btn-index:hover {
+    background-color:#0f4685;
+}
+

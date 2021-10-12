@@ -4,9 +4,10 @@
 
       <title>Controle de Locadora</title>
 
+      <link type="text/css" rel="stylesheet" href="css/style.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/style.css">
+      
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -24,15 +25,15 @@
     <body>
       <div class="container">
         <div class="row">
-          <ul>
-            <li>
-              <a class="waves-effect waves-light btn">Cadastro de Titulos</a>
+          <ul class="menu">
+            <li style="display: inline-block;">
+              <a class="waves-effect waves-light btn" id="btn-index" href="#">Cadastro de Títulos</a>
             </li>
-            <li>
-              <a class="waves-effect waves-light btn">Cadastro de Clientes</a>
+            <li style="display: inline-block;">
+              <a class="waves-effect waves-light btn" id="btn-index" href="#">Cadastro de Clientes</a>
             </li>
-            <li>
-              <a class="waves-effect waves-light btn">Controle de Locação</a>
+            <li style="display: inline-block;">
+              <a class="waves-effect waves-light btn" id="btn-index" href="#">Controle de Locação</a>
             </li>
           </ul>
         </div>
