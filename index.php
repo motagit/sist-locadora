@@ -13,7 +13,7 @@
 
       <nav class="blue darken-3">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Controle de Locadora</a>
+          <a href="index.php" class="brand-logo center">Controle de Locadora</a>
           <ul id="nav-mobile" class="right">
             <li class="active"><a href="index.php"><i class="material-icons left">home</i>Menu</a></li>
           </ul>
@@ -30,7 +30,7 @@
               <a class="waves-effect waves-light btn" id="btn-index" href="#">Cadastro de Títulos</a>
             </li>
             <li style="display: inline-block;">
-              <a class="waves-effect waves-light btn" id="btn-index" href="#">Cadastro de Clientes</a>
+              <a class="waves-effect waves-light btn" id="btn-index" href="cadastroCliente.php">Cadastro de Clientes</a>
             </li>
             <li style="display: inline-block;">
               <a class="waves-effect waves-light btn" id="btn-index" href="#">Controle de Locação</a>
