@@ -15,7 +15,7 @@
         <div class="nav-wrapper">
           <a href="index.php" class="brand-logo center">Controle de Locadora</a>
           <ul id="nav-mobile" class="right">
-            <li class="active"><a href="index.php"><i class="material-icons left">home</i>Menu</a></li>
+            <li><a href="index.php"><i class="material-icons left">home</i>Menu</a></li>
           </ul>
         </div>
       </nav>
@@ -25,7 +25,11 @@
     <body>
         <div class="container">
             <div class="row">
-                <div>
+                <div class="formCadastro z-depth-2">
+                    <div class="formCadastroTitulo">
+                        <a href="index.php"><i class="material-icons small left">arrow_back</i></a>
+                        <h5>Cadastro de Clientes</h5>
+                    </div>
                     <form class="col s12" action="cadastroCliente_func.php" method="post">
                         <div class="row">
                             <div class="input-field col s8">
@@ -51,7 +55,7 @@
                                 <label>Endereço</label>
                             </div>
                         </div>
-                        <input class="waves-effect waves-light btn" type="submit" />
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </form>
                 </div>
             </div>

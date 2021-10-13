@@ -20,3 +20,55 @@
 #btn-index:hover {
     background-color:#0f4685;
 }
+
+
+/* Cadastro */
+
+.formCadastro {
+    display: flex; 
+    justify-content: center;
+	flex-direction: column;
+	width: 800px;
+    margin: 80px auto 0 auto;
+    border: 0px solid #000;
+    border-radius: 15px;
+}
+
+.formCadastro form {
+    margin: 20px !important;
+}
+
+.formCadastro .btn {
+    background-color: #1565C0;
+}
+
+.formCadastro .btn:hover {
+    background-color: #0f4685;
+}
+
+.formCadastroTitulo {
+    background-color: #1565C0;
+    border-radius: 15px 15px 0 0;
+    color: white;
+    font-weight: 700;
+}
+
+.formCadastroTitulo i {
+    margin: 15px -40px 0 10px !important;
+    color: white;
+}
+
+.formCadastroTitulo h5 {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 15px 0;
+}
+
+ /* materialize input color */
+.input-field input[type=text]:focus + label {
+    color: #1565C0 !important;
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #1565C0 !important;
+    box-shadow: 0 1px 0 0 #1565C0 !important;
+}
