@@ -12,7 +12,7 @@
     justify-content: center; 
     align-items: center; 
     margin: 10px;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     background-color: #1565C0;
 }
@@ -20,7 +20,6 @@
 #btn-index:hover {
     background-color:#0f4685;
 }
-
 
 /* Cadastro */
 
@@ -71,4 +70,9 @@
 .input-field input[type=text]:focus {
     border-bottom: 1px solid #1565C0 !important;
     box-shadow: 0 1px 0 0 #1565C0 !important;
+}
+
+/* materialize select color */
+ul.dropdown-content.select-dropdown li:not(.disabled) span {
+    color: #1565C0; 
 }

@@ -27,7 +27,7 @@
         <div class="row">
           <ul class="menu">
             <li style="display: inline-block;">
-              <a class="waves-effect waves-light btn" id="btn-index" href="#">Cadastro de Títulos</a>
+              <a class="waves-effect waves-light btn" id="btn-index" href="cadastroTitulo.php">Cadastro de Títulos</a>
             </li>
             <li style="display: inline-block;">
               <a class="waves-effect waves-light btn" id="btn-index" href="cadastroCliente.php">Cadastro de Clientes</a>
@@ -39,7 +39,7 @@
         </div>
       </div>
       
-
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
   </html>

@@ -28,39 +28,52 @@
                 <div class="formCadastro z-depth-2">
                     <div class="formCadastroTitulo">
                         <a href="index.php"><i class="material-icons small left">arrow_back</i></a>
-                        <h5>Cadastro de Clientes</h5>
+                        <h5>Cadastro de Títulos</h5>
                     </div>
-                    <form class="col s12" action="cadastroCliente_func.php" method="post">
+                    <form class="col s12" action="cadastroTitulo_func.php" method="post">
                         <div class="row">
                             <div class="input-field col s8">
-                                <input id="nome" name="nome" type="text">
-                                <label>Nome</label>
+                                <input name="nome" type="text">
+                                <label>Nome do Título</label>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <input type="text" name="ano" maxlength="4">
+                                <label>Ano</label>
+                            </div>
+                        </div>
+    
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="cpf" name="cpf" type="text">
-                                <label>CPF</label>
+                                <select name="estoque">
+                                    <option value="" disabled selected>Escolha uma opção</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="7">8</option>
+                                </select>
+                                <label>Quantidade em Estoque</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s4">
-                                <input id="telefone" name="telefone" type="text">
-                                <label>Telefone</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s8">
-                                <input id="endereco" name="endereco" type="text">
-                                <label>Endereço</label>
-                            </div>
-                        </div>
+
                         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </form>
                 </div>
             </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+        </div> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+
+    </script>
     </body>
 </html>
