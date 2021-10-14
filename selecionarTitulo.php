@@ -34,14 +34,14 @@ $result = mysqli_query($conn, $sql);
             <div class="row">
                 <div class="formCadastro z-depth-2">
                     <div class="formCadastroTitulo">
-                        <a href="controleLocacao.php"><i class="material-icons small left">arrow_back</i></a>
+                        <a href="cadastroRetirada.php"><i class="material-icons small left">arrow_back</i></a>
                         <h5>Selecionar Título</h5>
                     </div>
                     <?php if (mysqli_num_rows($result) > 0) { ?>
-                        <ul>
+                        <ul style="height: 500px; overflow-y:scroll;">
                         <?php while($row = mysqli_fetch_assoc($result)) { ?>
 
-                            <a href="controleLocacao.php?id_cliente=<?php echo $_GET['id_cliente']?>&nome_cliente=<?php echo $_GET['nome_cliente'] ?>&id_titulo=<?php echo $row["id"]?>&nome_titulo=<?php echo $row["nome"] ?>">
+                            <a href="cadastroRetirada.php?id_cliente=<?php echo $_GET['id_cliente']?>&nome_cliente=<?php echo $_GET['nome_cliente'] ?>&id_titulo=<?php echo $row["id"]?>&nome_titulo=<?php echo $row["nome"] ?>">
                                 <li class="">
                                     <p><?php echo $row["id"];?> </p>
                                     <p><?php echo $row["nome"]; ?></p>

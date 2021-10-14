@@ -32,13 +32,13 @@ $result = mysqli_query($conn, $sql);
     <body>
         <div class="container">
             <div class="row">
-                <div class="formCadastro z-depth-2">
+                <div class="formCadastro z-depth-2" >
                     <div class="formCadastroTitulo">
-                        <a href="controleLocacao.php"><i class="material-icons small left">arrow_back</i></a>
+                        <a href="cadastroRetirada.php"><i class="material-icons small left">arrow_back</i></a>
                         <h5>Selecionar Cliente</h5>
                     </div>
                     <?php if (mysqli_num_rows($result) > 0) { ?>
-                        <ul>
+                        <ul style="height: 500px; overflow-y:scroll;">
                         <?php while($row = mysqli_fetch_assoc($result)) { ?>
 
                             <a href="selecionarTitulo.php?id_cliente=<?php echo $row["id"]?>&nome_cliente=<?php echo $row["nome"] ?>">

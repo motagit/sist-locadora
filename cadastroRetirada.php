@@ -35,7 +35,7 @@
                         <a href="index.php"><i class="material-icons small left">arrow_back</i></a>
                         <h5>Cadastro de Retirada</h5>
                     </div>
-                    <form class="col s12" action="controleLocacao_func.php" method="post">
+                    <form class="col s12" action="cadastroRetirada_func.php" method="post">
                         <div class="row">
                         <?php if (isset($_GET['nome_cliente'])) { ?>
                             <div class="input-field col s6">
