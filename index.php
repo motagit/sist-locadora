@@ -33,7 +33,7 @@
               <a class="waves-effect waves-light btn" id="btn-index" href="cadastroCliente.php">Cadastro de Clientes</a>
             </li>
             <li style="display: inline-block;">
-              <a class="waves-effect waves-light btn" id="btn-index" href="#">Controle de Locação</a>
+              <a class="waves-effect waves-light btn" id="btn-index" href="controleLocacao.php">Controle de Locação</a>
             </li>
           </ul>
         </div>
