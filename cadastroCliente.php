@@ -33,25 +33,25 @@
                     <form class="col s12" action="cadastroCliente_func.php" method="post">
                         <div class="row">
                             <div class="input-field col s8">
-                                <input id="nome" name="nome" type="text">
+                                <input id="nome" name="nome" type="text" required>
                                 <label>Nome</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="cpf" name="cpf" type="text">
+                                <input id="cpf" name="cpf" type="text" required>
                                 <label>CPF</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="telefone" name="telefone" type="text">
+                                <input id="telefone" name="telefone" type="text" required>
                                 <label>Telefone</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s8">
-                                <input id="endereco" name="endereco" type="text">
+                                <input id="endereco" name="endereco" type="text" required>
                                 <label>Endereço</label>
                             </div>
                         </div>

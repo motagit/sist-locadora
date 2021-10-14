@@ -33,20 +33,20 @@
                     <form class="col s12" action="cadastroTitulo_func.php" method="post">
                         <div class="row">
                             <div class="input-field col s8">
-                                <input name="nome" type="text">
+                                <input name="nome" type="text" required>
                                 <label>Nome do Título</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s2">
-                                <input type="text" name="ano" maxlength="4">
+                                <input type="text" name="ano" maxlength="4" required>
                                 <label>Ano</label>
                             </div>
                         </div>
     
                         <div class="row">
                             <div class="input-field col s4">
-                                <select name="estoque">
+                                <select name="estoque" required>
                                     <option value="" disabled selected>Escolha uma opção</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
