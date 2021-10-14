@@ -76,3 +76,39 @@
 ul.dropdown-content.select-dropdown li:not(.disabled) span {
     color: #1565C0; 
 }
+
+#searchButton {
+    margin-top: 16px; 
+    height: 45px;
+    margin-left: -12px;
+}
+#searchButton i {
+    padding-top: 5px;
+}
+
+/* materialize datepicker colors */
+.datepicker-date-display {
+    background-color: #0f4685 !important;
+}
+.datepicker-table td.is-today {
+    color: #1565C0 !important;
+}
+
+.datepicker-table td.is-selected {
+    background-color: #1565C0 !important;
+}
+
+.datepicker-day-button:focus {
+    background-color: #1565C0 !important;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    color: #0f4685 !important;
+}
+
+.month-prev, .month-next {
+    background-color: transparent !important;
+}

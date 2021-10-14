@@ -35,7 +35,7 @@ $result = mysqli_query($conn, $sql);
                 <div class="formCadastro z-depth-2">
                     <div class="formCadastroTitulo">
                         <a href="controleLocacao.php"><i class="material-icons small left">arrow_back</i></a>
-                        <h5>Selecionar Titulo</h5>
+                        <h5>Selecionar Título</h5>
                     </div>
                     <?php if (mysqli_num_rows($result) > 0) { ?>
                         <ul>
@@ -46,6 +46,7 @@ $result = mysqli_query($conn, $sql);
                                     <p><?php echo $row["id"];?> </p>
                                     <p><?php echo $row["nome"]; ?></p>
                                     <p><?php echo $row["ano"]; ?></p>
+                                    <p><?php echo $row["estoque"]; ?></p>
                                     <div class="divider"></div>
                                 </li>
                             </a>

@@ -48,7 +48,7 @@
                                 <label>Selecionar Cliente</label>
                             </div>
                         <?php } ?>
-                            <a class="waves-effect waves-light btn" href="selecionarCliente.php"><i class="material-icons">search</i></a>
+                            <a class="waves-effect waves-light btn" id="searchButton" href="selecionarCliente.php"><i class="material-icons">search</i></a>
                         </div>
                         <div class="row">
                         <?php if (isset($_GET['nome_titulo'])) { ?>
