@@ -12,7 +12,7 @@ if ($conn) {
     $estoque_sql = mysqli_query($conn, "SELECT CAST(estoque AS INT) FROM titulos WHERE id ='$titulo'");
     $estoque_arr = mysqli_fetch_array($estoque_sql);
     $estoque = $estoque_arr[0] - 1;
-    $query = "INSERT INTO controle VALUES (NULL, '$cliente', '$titulo', '$dat_ret', '$dat_ent', '$valor');";
+    $query = "INSERT INTO controle VALUES (NULL, '$cliente', '$titulo', '$dat_ret', '$dat_ent', '$valor', 0, 'ANDAMENTO');";
     $query .= "UPDATE titulos SET estoque='$estoque' WHERE id='$titulo'";
     mysqli_multi_query($conn, $query);
     header('Location: cadastroRetirada.php?teste='.$teste2[0]);

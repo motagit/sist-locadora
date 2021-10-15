@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="formCadastro z-depth-2">
                     <div class="formCadastroTitulo">
-                        <a href="index.php"><i class="material-icons small left">arrow_back</i></a>
+                        <a href="controleLocacao.php"><i class="material-icons small left">arrow_back</i></a>
                         <h5>Cadastro de Retirada</h5>
                     </div>
                     <form class="col s12" action="cadastroRetirada_func.php" method="post">
