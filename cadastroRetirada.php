@@ -40,7 +40,7 @@
                         <?php if (isset($_GET['nome_cliente'])) { ?>
                             <div class="input-field col s6">
                                 <input name="cliente" type="text" value="<?php echo $_GET['id_cliente']?>" readonly="readonly" required>
-                                <label>Cliente</label>
+                                <label>Cliente (ID)</label>
                             </div>
                         <?php } else { ?>
                             <div class="input-field col s6">
@@ -54,7 +54,7 @@
                         <?php if (isset($_GET['nome_titulo'])) { ?>
                             <div class="input-field col s6">
                                 <input name="titulo" type="text" value="<?php echo $_GET['id_titulo']?>" readonly="readonly" required>
-                                <label>Selecionar Filme</label>
+                                <label>Filme (ID)</label>
                             </div>
                         <?php } else { ?>
                             <div class="input-field col s6">
