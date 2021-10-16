@@ -112,3 +112,28 @@ ul.dropdown-content.select-dropdown li:not(.disabled) span {
 .month-prev, .month-next {
     background-color: transparent !important;
 }
+
+/* Selecionar cliente/titulo */
+.selec {
+    margin-left: 20px;
+}
+
+.selec p:nth-child(4n) {
+    margin-bottom: -40px;
+}
+
+.selec span {
+    font-weight: 700;
+}
+
+.selec a {
+    position: relative;
+    top: -60px;
+    left: 90%;
+    margin: 0 auto;
+}
+
+.selec a i {
+    color: #1565C0;
+}
+

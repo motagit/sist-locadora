@@ -34,24 +34,44 @@ $result = mysqli_query($conn, $sql);
             <div class="row">
                 <div class="formCadastro z-depth-2">
                     <div class="formCadastroTitulo">
-                        <a href="cadastroRetirada.php"><i class="material-icons small left">arrow_back</i></a>
+                        <a href="selecionarCliente.php"><i class="material-icons small left">arrow_back</i></a>
                         <h5>Selecionar Título</h5>
                     </div>
                     <?php if (mysqli_num_rows($result) > 0) { ?>
                         <ul style="height: 500px; overflow-y:scroll;">
-                        <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                        <?php while($row = mysqli_fetch_assoc($result)) {
+                            $id_titulo = $row["id"];
+                            $estoque_sql = mysqli_query($conn, "SELECT CAST(estoque AS INT) FROM titulos WHERE id ='$id_titulo'");
+                            $estoque_arr = mysqli_fetch_array($estoque_sql);
+                            $estoque = $estoque_arr[0];
 
-                            <a href="cadastroRetirada.php?id_cliente=<?php echo $_GET['id_cliente']?>&nome_cliente=<?php echo $_GET['nome_cliente'] ?>&id_titulo=<?php echo $row["id"]?>&nome_titulo=<?php echo $row["nome"] ?>">
-                                <li class="">
-                                    <p><?php echo $row["id"];?> </p>
-                                    <p><?php echo $row["nome"]; ?></p>
-                                    <p><?php echo $row["ano"]; ?></p>
-                                    <p><?php echo $row["estoque"]; ?></p>
+                            if ($estoque == 0) { ?>
+                                <li class="selec">
+                                    <p><span>ID:</span> <?php echo $row["id"];?> </p>
+                                    <p><span>Nome do Título:</span> <?php echo $row["nome"]; ?></p>
+                                    <p><span>Ano de Lançamento:</span> <?php echo $row["ano"]; ?></p>
+                                    <p><span>Estoque:</span> <?php echo $row["estoque"]; ?></p>
+                                    <a style="cursor: default" title="Sem estoque!"><i style="color: #cfcfcf;" class="material-icons medium">arrow_forward</i>
+                                    </a>
                                     <div class="divider"></div>
                                 </li>
-                            </a>
+                            
+                        <?php } else { ?>
+                                <li class="selec">
+                                    <p><span>ID:</span> <?php echo $row["id"];?> </p>
+                                    <p><span>Nome do Título:</span> <?php echo $row["nome"]; ?></p>
+                                    <p><span>Ano de Lançamento:</span> <?php echo $row["ano"]; ?></p>
+                                    <p><span>Estoque:</span> <?php echo $row["estoque"]; ?></p>
+                                    <a href="cadastroRetirada.php?id_cliente=<?php echo $_GET['id_cliente']?>
+                                        &nome_cliente=<?php echo $_GET['nome_cliente'] ?>
+                                        &id_titulo=<?php echo $row["id"]?>
+                                        &nome_titulo=<?php echo $row["nome"] ?>">
+                                        <i class="material-icons medium">arrow_forward</i>
+                                    </a>
+                                    <div class="divider"></div>
+                                </li>
 
-                    <?php }}?>
+                    <?php }}}?>
                         </ul>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php
 include 'db_connection.php';
 
-$sql = "SELECT * FROM clientes";
+$sql = "SELECT * FROM clientes ORDER BY id";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -40,17 +40,16 @@ $result = mysqli_query($conn, $sql);
                     <?php if (mysqli_num_rows($result) > 0) { ?>
                         <ul style="height: 500px; overflow-y:scroll;">
                         <?php while($row = mysqli_fetch_assoc($result)) { ?>
-
-                            <a href="selecionarTitulo.php?id_cliente=<?php echo $row["id"]?>&nome_cliente=<?php echo $row["nome"] ?>">
-                                <li class="">
-                                    <p><?php echo $row["id"];?> </p>
-                                    <p><?php echo $row["nome"]; ?></p>
-                                    <p><?php echo $row["cpf"]; ?></p>
-                                    <p><?php echo $row["endereco"]; ?></p>
+                                <li class="selec">
+                                    <p><span>ID:</span> <?php echo $row["id"];?> </p>
+                                    <p><span>Nome Completo:</span> <?php echo $row["nome"]; ?></p>
+                                    <p><span>CPF:</span> <?php echo $row["cpf"]; ?></p>
+                                    <p><span>Endereço:</span> <?php echo $row["endereco"]; ?></p>
+                                    <a href="selecionarTitulo.php?id_cliente=<?php echo $row["id"]?>&nome_cliente=<?php echo $row["nome"] ?>">
+                                        <i class="material-icons medium">arrow_forward</i>
+                                    </a>
                                     <div class="divider"></div>
                                 </li>
-                            </a>
-
                     <?php }}?>
                         </ul>
                 </div>

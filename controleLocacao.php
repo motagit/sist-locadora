@@ -19,23 +19,22 @@ $finalizado = mysqli_query($conn, $sql);
 <html>
     <head>
 
-      <title>Controle de Locadora</title>
+    <title>Controle de Locadora</title>
 
-      <link type="text/css" rel="stylesheet" href="css/style.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-      <nav class="blue darken-3">
+    <nav class="blue darken-3">
         <div class="nav-wrapper">
-          <a href="index.php" class="brand-logo center">Controle de Locadora</a>
-          <ul id="nav-mobile" class="right">
+        <a href="index.php" class="brand-logo center">Controle de Locadora</a>
+        <ul id="nav-mobile" class="right">
             <li><a href="index.php"><i class="material-icons left">home</i>Menu</a></li>
-          </ul>
+        </ul>
         </div>
-      </nav>
+    </nav>
         
     </head>
 
@@ -56,12 +55,22 @@ $finalizado = mysqli_query($conn, $sql);
                             $valor_final = $row["valor"] + 2 * $difference;
                             $query = "UPDATE controle SET valor_juros='$valor_final' WHERE id='$id'";
                             mysqli_query($conn, $query);
+
+                            $id_titulo = $row["id_titulo"];
+                            $nome_titulo_sql = mysqli_query($conn, "SELECT nome FROM titulos WHERE id ='$id_titulo';");
+                            $nome_titulo_arr = mysqli_fetch_array($nome_titulo_sql);
+                            $nome_titulo = $nome_titulo_arr[0];
+
+                            $id_cliente = $row["id_cliente"];
+                            $nome_cliente_sql = mysqli_query($conn, "SELECT nome FROM clientes WHERE id ='$id_cliente';");
+                            $nome_cliente_arr = mysqli_fetch_array($nome_cliente_sql);
+                            $nome_cliente = $nome_cliente_arr[0];
                             ?>
                                 
                             <li class="">
                                 <p style="display: inline-block"><?php echo $row["id"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["id_cliente"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["id_titulo"];?> </p>
+                                <p style="display: inline-block"><?php echo $nome_cliente;?> </p>
+                                <p style="display: inline-block"><?php echo $nome_titulo;?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["valor_juros"];?> </p>
@@ -76,12 +85,22 @@ $finalizado = mysqli_query($conn, $sql);
                     <h5>Em andamento</h5>
                     <?php if (mysqli_num_rows($andamento) > 0) { ?>
                         <ul style="">
-                        <?php while($row = mysqli_fetch_assoc($andamento)) { ?>
+                        <?php while($row = mysqli_fetch_assoc($andamento)) { 
+                            $id_titulo = $row["id_titulo"];
+                            $nome_titulo_sql = mysqli_query($conn, "SELECT nome FROM titulos WHERE id ='$id_titulo';");
+                            $nome_titulo_arr = mysqli_fetch_array($nome_titulo_sql);
+                            $nome_titulo = $nome_titulo_arr[0];
+
+                            $id_cliente = $row["id_cliente"];
+                            $nome_cliente_sql = mysqli_query($conn, "SELECT nome FROM clientes WHERE id ='$id_cliente';");
+                            $nome_cliente_arr = mysqli_fetch_array($nome_cliente_sql);
+                            $nome_cliente = $nome_cliente_arr[0];
+                        ?>
                             
                             <li class="">
                                 <p style="display: inline-block"><?php echo $row["id"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["id_cliente"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["id_titulo"];?> </p>
+                                <p style="display: inline-block"><?php echo $nome_cliente;?> </p>
+                                <p style="display: inline-block"><?php echo $nome_titulo?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["valor"];?> </p>
@@ -96,12 +115,22 @@ $finalizado = mysqli_query($conn, $sql);
                         <h5>Finalizados</h5>
                         <?php if (mysqli_num_rows($finalizado) > 0) { ?>
                         <ul style="">
-                        <?php while($row = mysqli_fetch_assoc($finalizado)) { ?>
+                        <?php while($row = mysqli_fetch_assoc($finalizado)) {
+                            $id_titulo = $row["id_titulo"];
+                            $nome_titulo_sql = mysqli_query($conn, "SELECT nome FROM titulos WHERE id ='$id_titulo';");
+                            $nome_titulo_arr = mysqli_fetch_array($nome_titulo_sql);
+                            $nome_titulo = $nome_titulo_arr[0];
+
+                            $id_cliente = $row["id_cliente"];
+                            $nome_cliente_sql = mysqli_query($conn, "SELECT nome FROM clientes WHERE id ='$id_cliente';");
+                            $nome_cliente_arr = mysqli_fetch_array($nome_cliente_sql);
+                            $nome_cliente = $nome_cliente_arr[0];                            
+                        ?>
 
                             <li class="">
                                 <p style="display: inline-block"><?php echo $row["id"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["id_cliente"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["id_titulo"];?> </p>
+                                <p style="display: inline-block"><?php echo $nome_titulo; ?> </p>
+                                <p style="display: inline-block"><?php echo $nome_cliente;?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["valor"];?> </p>
