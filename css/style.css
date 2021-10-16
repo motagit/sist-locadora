@@ -137,3 +137,95 @@ ul.dropdown-content.select-dropdown li:not(.disabled) span {
     color: #1565C0;
 }
 
+/* Retirada */
+.retirada {
+    border: 0px solid #000;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.retirada p:nth-child(3) {
+    margin-right: 20px;
+}
+
+.retirada p:nth-child(3),
+.retirada p:nth-child(4) {
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.retirada li {
+    padding: 10px 0px 10px 20px;
+}
+
+.retirada span {
+    font-weight: 700;
+}
+
+#btn_retirada {
+    margin: 60px 0px 20px 0px;
+}
+
+.retirada .btn, #btn_retirada {
+    background-color: #1565C0;
+}
+
+.retirada .btn:hover, #btn_retirada:hover {
+    background-color: #0f4685;
+}
+
+.retirada li a {
+    position: relative;
+    top: -80px;
+    left: 82%;
+    margin: 0 auto;
+}
+
+.retirada li p:nth-child(5) {
+    margin-bottom: -20px;
+}
+
+/* Status Retirada */
+.atrasado {
+    display: inline-block;
+}
+
+.atrasado span {
+    padding: 10px;
+    border: 0px solid #000;
+    border-radius: 15px;
+    background-color: rgb(241, 27, 27);
+    color: white;
+    font-size: 16px;
+}
+
+.andamento {
+    display: inline-block;
+}
+
+.andamento span {
+    padding: 10px;
+    border: 0px solid #000;
+    border-radius: 15px;
+    background-color: rgb(228, 224, 0);
+    color: white;
+    font-size: 16px;
+}
+
+.finalizado {
+    display: inline-block;
+}
+
+.finalizado span {
+    padding: 10px;
+    border: 0px solid #000;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+}
+
+.valor_finalizado {
+    margin-bottom: 0px !important;
+}

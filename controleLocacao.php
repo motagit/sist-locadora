@@ -42,15 +42,13 @@ $finalizado = mysqli_query($conn, $sql);
         <div class="container">
             <div class="row">
                 <div class="container">
-                    <a class="btn waves-effect waves-light" href="cadastroRetirada.php" style="margin-top: 60px;">Cadastrar Retirada</a>
-                    <h5>Atrasados</h5>
+                    <a class="btn waves-effect waves-light" href="cadastroRetirada.php" id="btn_retirada">Cadastrar Retirada</a>
                     <?php if (mysqli_num_rows($atrasado) > 0) { ?>
                         <ul style="">
                         <?php while($row = mysqli_fetch_assoc($atrasado)) { 
                             $end = strtotime($date);
                             $start = strtotime($row["data_ent"]);
                             $difference = ($end - $start)/60/60/24;
-                            echo $difference.' ';
                             $id = $row["id"];
                             $valor_final = $row["valor"] + 2 * $difference;
                             $query = "UPDATE controle SET valor_juros='$valor_final' WHERE id='$id'";
@@ -67,22 +65,27 @@ $finalizado = mysqli_query($conn, $sql);
                             $nome_cliente = $nome_cliente_arr[0];
                             ?>
                                 
-                            <li class="">
-                                <p style="display: inline-block"><?php echo $row["id"];?> </p>
-                                <p style="display: inline-block"><?php echo $nome_cliente;?> </p>
-                                <p style="display: inline-block"><?php echo $nome_titulo;?> </p>
-                                <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["valor_juros"];?> </p>
-                                <a href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>"><i class="material-icons">check</i></a>
-
-                                <div class="divider"></div>
-                            </li>
+                            <div class="retirada z-depth-1">
+                                <div class="atrasado">
+                                    <span>ID: <?php echo $row["id"];?></span>
+                                </div>
+                                <div class="atrasado">
+                                    <span>Atrasado (<?php echo $difference ?> dias)</span>
+                                </div>
+                                
+                                <li>
+                                    <p><span>Nome do Cliente:</span> <?php echo $nome_cliente;?> </p>
+                                    <p><span>Nome do Título:</span> <?php echo $nome_titulo;?> </p>
+                                    <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
+                                    <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
+                                    <p><span>Valor Final:</span> R$<?php echo $row["valor_juros"];?> <small>(Valor Base: R$<?php echo $row["valor"]; ?>, Valor de Multa: R$<?php echo $difference*2;?>)</small></p>
+                                    <a class="btn waves-effect waves-light" href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>">Entregue</a>
+                                </li>
+                            </div>
 
                     <?php }}?>
                         </ul>
                     
-                    <h5>Em andamento</h5>
                     <?php if (mysqli_num_rows($andamento) > 0) { ?>
                         <ul style="">
                         <?php while($row = mysqli_fetch_assoc($andamento)) { 
@@ -96,23 +99,28 @@ $finalizado = mysqli_query($conn, $sql);
                             $nome_cliente_arr = mysqli_fetch_array($nome_cliente_sql);
                             $nome_cliente = $nome_cliente_arr[0];
                         ?>
-                            
-                            <li class="">
-                                <p style="display: inline-block"><?php echo $row["id"];?> </p>
-                                <p style="display: inline-block"><?php echo $nome_cliente;?> </p>
-                                <p style="display: inline-block"><?php echo $nome_titulo?> </p>
-                                <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["valor"];?> </p>
-                                <a href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>"><i class="material-icons">check</i></a>
-
-                                <div class="divider"></div>
-                            </li>
+                        
+                            <div class="retirada z-depth-1">
+                                <div class="andamento">
+                                    <span>ID: <?php echo $row["id"];?></span>
+                                </div>
+                                <div class="andamento">
+                                    <span>Em Andamento</span>
+                                </div>
+                                
+                                <li>
+                                    <p><span>Nome do Cliente:</span> <?php echo $nome_cliente;?> </p>
+                                    <p><span>Nome do Título:</span> <?php echo $nome_titulo;?> </p>
+                                    <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
+                                    <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
+                                    <p><span>Valor:</span> R$<?php echo $row["valor"];?></p>
+                                    <a class="btn waves-effect waves-light" href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>">Entregue</a>
+                                </li>
+                            </div>
 
                     <?php } } ?>
                         </ul>
                         
-                        <h5>Finalizados</h5>
                         <?php if (mysqli_num_rows($finalizado) > 0) { ?>
                         <ul style="">
                         <?php while($row = mysqli_fetch_assoc($finalizado)) {
@@ -127,16 +135,22 @@ $finalizado = mysqli_query($conn, $sql);
                             $nome_cliente = $nome_cliente_arr[0];                            
                         ?>
 
-                            <li class="">
-                                <p style="display: inline-block"><?php echo $row["id"];?> </p>
-                                <p style="display: inline-block"><?php echo $nome_titulo; ?> </p>
-                                <p style="display: inline-block"><?php echo $nome_cliente;?> </p>
-                                <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
-                                <p style="display: inline-block"><?php echo $row["valor"];?> </p>
-
-                                <div class="divider"></div>
-                            </li>
+                            <div class="retirada z-depth-1">
+                                <div class="finalizado">
+                                    <span>ID: <?php echo $row["id"];?></span>
+                                </div>
+                                <div class="finalizado">
+                                    <span>Finalizado</span>
+                                </div>
+                                
+                                <li>
+                                    <p><span>Nome do Cliente:</span> <?php echo $nome_cliente;?> </p>
+                                    <p><span>Nome do Título:</span> <?php echo $nome_titulo;?> </p>
+                                    <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
+                                    <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
+                                    <p class="valor_finalizado"><span>Valor:</span> R$<?php echo $row["valor"];?></p>
+                                </li>
+                            </div>
 
                     <?php }}?>
                         </ul>
