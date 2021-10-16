@@ -4,13 +4,13 @@ include 'db_connection.php';
 date_default_timezone_set('America/Sao_Paulo');
 $date = date('Y-m-d');
 
-$sql = "SELECT * FROM controle WHERE status='ANDAMENTO' AND data_ent < CURDATE()";
+$sql = "SELECT * FROM controle WHERE status=1 AND data_ent < CURDATE()";
 $atrasado = mysqli_query($conn, $sql);
 
-$sql = "SELECT * FROM controle WHERE status='ANDAMENTO' AND data_ent >= CURDATE()";
+$sql = "SELECT * FROM controle WHERE status=1 AND data_ent >= CURDATE()";
 $andamento = mysqli_query($conn, $sql);
 
-$sql = "SELECT * FROM controle WHERE status='FINALIZADO'";
+$sql = "SELECT * FROM controle WHERE status=0";
 $finalizado = mysqli_query($conn, $sql);
 
 
@@ -65,7 +65,7 @@ $finalizado = mysqli_query($conn, $sql);
                                 <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["valor_juros"];?> </p>
-                                <a href="finalizarLocacao.php?id="<?php echo $row["id"] ?>><i class="material-icons">check</i></a>
+                                <a href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>"><i class="material-icons">check</i></a>
 
                                 <div class="divider"></div>
                             </li>
@@ -85,7 +85,7 @@ $finalizado = mysqli_query($conn, $sql);
                                 <p style="display: inline-block"><?php echo $row["data_ret"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["data_ent"];?> </p>
                                 <p style="display: inline-block"><?php echo $row["valor"];?> </p>
-                                <a href="finalizarLocacao.php?id="<?php echo $row["id"] ?>><i class="material-icons">check</i></a>
+                                <a href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>"><i class="material-icons">check</i></a>
 
                                 <div class="divider"></div>
                             </li>
