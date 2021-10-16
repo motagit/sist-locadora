@@ -37,8 +37,12 @@ $result = mysqli_query($conn, $sql);
                         <a href="selecionarCliente.php"><i class="material-icons small left">arrow_back</i></a>
                         <h5>Selecionar Título</h5>
                     </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="inputFiltro" onkeyup="filtrarNome()" placeholder="Pesquisar por nome...">
+                    </div>
                     <?php if (mysqli_num_rows($result) > 0) { ?>
-                        <ul style="height: 500px; overflow-y:scroll;">
+                        <ul id="ul_clientes_titulos">
                         <?php while($row = mysqli_fetch_assoc($result)) {
                             $id_titulo = $row["id"];
                             $estoque_sql = mysqli_query($conn, "SELECT CAST(estoque AS INT) FROM titulos WHERE id ='$id_titulo'");
@@ -76,18 +80,8 @@ $result = mysqli_query($conn, $sql);
                 </div>
             </div>
         </div>
-
-        
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-
-        <script>
-             $(document).ready(function(){
-                $('.datepicker').datepicker({
-                    format: 'yyyy-mm-dd',
-                });
-            });
-        </script>
-
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/filtragem.js"></script>
 </html>

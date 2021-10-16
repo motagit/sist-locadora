@@ -43,8 +43,12 @@ $finalizado = mysqli_query($conn, $sql);
             <div class="row">
                 <div class="container">
                     <a class="btn waves-effect waves-light" href="cadastroRetirada.php" id="btn_retirada">Cadastrar Retirada</a>
+                    <div class="input-field input-field-controle">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="inputFiltroControle" onkeyup="filtrarNomeLocacao()" placeholder="Pesquisar por nome do cliente...">
+                    </div>
                     <?php if (mysqli_num_rows($atrasado) > 0) { ?>
-                        <ul style="">
+                        <ul class="ul_locacao">
                         <?php while($row = mysqli_fetch_assoc($atrasado)) { 
                             $end = strtotime($date);
                             $start = strtotime($row["data_ent"]);
@@ -87,7 +91,7 @@ $finalizado = mysqli_query($conn, $sql);
                         </ul>
                     
                     <?php if (mysqli_num_rows($andamento) > 0) { ?>
-                        <ul style="">
+                        <ul class="ul_locacao">
                         <?php while($row = mysqli_fetch_assoc($andamento)) { 
                             $id_titulo = $row["id_titulo"];
                             $nome_titulo_sql = mysqli_query($conn, "SELECT nome FROM titulos WHERE id ='$id_titulo';");
@@ -122,7 +126,7 @@ $finalizado = mysqli_query($conn, $sql);
                         </ul>
                         
                         <?php if (mysqli_num_rows($finalizado) > 0) { ?>
-                        <ul style="">
+                        <ul class="ul_locacao">
                         <?php while($row = mysqli_fetch_assoc($finalizado)) {
                             $id_titulo = $row["id_titulo"];
                             $nome_titulo_sql = mysqli_query($conn, "SELECT nome FROM titulos WHERE id ='$id_titulo';");
@@ -160,7 +164,8 @@ $finalizado = mysqli_query($conn, $sql);
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/filtragem.js"></script>
 </html>
