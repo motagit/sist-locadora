@@ -39,7 +39,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s2">
-                                <input type="text" name="ano" maxlength="4" required>
+                                <input type="text" name="ano" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                                 <label>Ano</label>
                             </div>
                         </div>

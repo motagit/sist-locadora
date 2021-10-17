@@ -39,13 +39,13 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="cpf" name="cpf" type="text" required>
+                                <input id="cpf" name="cpf" type="text" maxLength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                                 <label>CPF</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input id="telefone" name="telefone" type="text" required>
+                                <input id="telefone" name="telefone" type="text" maxLength="13" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                                 <label>Telefone</label>
                             </div>
                         </div>

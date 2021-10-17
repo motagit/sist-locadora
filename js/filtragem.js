@@ -6,9 +6,9 @@ function filtrarNomeLocacao() {
     var array = [];
     for (x = 0; x < ul.length; x++) {
         var y = ul[x];
-        var teste = y.getElementsByClassName("retirada");
-        for (m = 0; m < teste.length; m++) {
-            var div_li = teste[m];
+        var z = y.getElementsByClassName("retirada");
+        for (m = 0; m < z.length; m++) {
+            var div_li = z[m];
             array.push(div_li)
         }
     }
