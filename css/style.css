@@ -272,3 +272,7 @@ ul.dropdown-content.select-dropdown li:not(.disabled) span {
 .modal { 
     width: 40% !important ; 
 }
+
+.btn {
+    font-weight: 700 !important;
+}
