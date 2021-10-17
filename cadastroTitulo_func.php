@@ -7,8 +7,11 @@ $estoque = $_POST['estoque'];
 
 if ($conn) {
     $query = "INSERT INTO titulos VALUES (NULL, '$nome', '$ano', '$estoque')";
-    mysqli_query($conn, $query);
-    header('Location: cadastroTitulo.php');
+    if (mysqli_query($conn, $query) == true) {
+        header('Location: cadastroTitulo.php?cad=ok');
+    } else {
+        header('Location: cadastroTitulo.php?cad=no');
+    }
 } else {
     die("Connection failed: " . mysqli_connect_error());
 }

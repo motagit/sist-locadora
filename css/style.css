@@ -71,9 +71,12 @@
     box-shadow: 0 1px 0 0 #1565C0 !important;
 }
 
-/* materialize select color */
+/* materialize dropdown select color/size */
 ul.dropdown-content.select-dropdown li:not(.disabled) span {
     color: #1565C0; 
+}
+.dropdown-content {
+    max-height: 250px !important;
 }
 
 #searchButton {

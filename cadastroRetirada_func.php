@@ -14,8 +14,11 @@ if ($conn) {
     $estoque = $estoque_arr[0] - 1;
     $query = "INSERT INTO controle VALUES (NULL, '$cliente', '$titulo', '$dat_ret', '$dat_ent', '$valor', 0, 1);";
     $query .= "UPDATE titulos SET estoque='$estoque' WHERE id='$titulo'";
-    mysqli_multi_query($conn, $query);
-    header('Location: controleLocacao.php');
+    if (mysqli_multi_query($conn, $query) == true) {
+        header('Location: controleLocacao.php?cad=ok');
+    } else {
+        header('Location: controleLocacao.php?cad=no');
+    }
 } else {
     die("Connection failed: " . mysqli_connect_error());
 }

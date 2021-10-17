@@ -168,4 +168,15 @@ $finalizado = mysqli_query($conn, $sql);
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/filtragem.js"></script>
+    <script>
+        <?php if (isset($_GET['cad'])) {
+            if ($_GET['cad'] == 'ok') { ?>
+                var toastOk = '<span><i class="material-icons left">check</i>Cadastrado com sucesso!</span>';
+                M.toast({html: toastOk, classes: 'rounded'});
+            <?php } if ($_GET['cad'] == 'no') { ?>
+                var toastOk = '<span><i class="material-icons left">error</i>Ocorreu um erro ao cadastrar</span>';
+                M.toast({html: toastOk, classes: 'rounded'});
+        <?php }
+        } ?>
+    </script>
 </html>

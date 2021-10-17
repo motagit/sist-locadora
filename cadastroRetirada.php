@@ -65,20 +65,20 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input class="datepicker" name="data_ret" type="text" required>
+                                <input class="datepicker" name="data_ret" type="text" placeholder="" required>
                                 <label>Data de Retirada</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input class="datepicker" name="data_ent" type="text" required>
+                                <input class="datepicker" name="data_ent" type="text" placeholder="" required>
                                 <label>Data de Entrega</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s4">
-                                <input name="valor" type="text" required>
-                                <label>Valor</label>
+                                <input name="valor" type="text" placeholder="" required>
+                                <label>Valor (R$)</label>
                             </div>
                         </div>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>

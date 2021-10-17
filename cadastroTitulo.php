@@ -33,13 +33,13 @@
                     <form class="col s12" action="cadastroTitulo_func.php" method="post">
                         <div class="row">
                             <div class="input-field col s8">
-                                <input name="nome" type="text" required>
+                                <input name="nome" type="text" placeholder="" required>
                                 <label>Nome do Título</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s2">
-                                <input type="text" name="ano" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                                <input type="text" name="ano" placeholder="" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                                 <label>Ano</label>
                             </div>
                         </div>
@@ -55,19 +55,36 @@
                                     <option value="5">5</option>
                                     <option value="6">6</option>
                                     <option value="7">7</option>
-                                    <option value="7">8</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
                                 </select>
                                 <label>Quantidade em Estoque</label>
                             </div>
                         </div>
-
                         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </form>
                 </div>
             </div>
-        </div> 
+        </div>                  
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        <?php if (isset($_GET['cad'])) {
+            if ($_GET['cad'] == 'ok') { ?>
+                var toastOk = '<span><i class="material-icons left">check</i>Cadastrado com sucesso!</span>';
+                M.toast({html: toastOk, classes: 'rounded'});
+            <?php } if ($_GET['cad'] == 'no') { ?>
+                var toastOk = '<span><i class="material-icons left">error</i>Ocorreu um erro ao cadastrar</span>';
+                M.toast({html: toastOk, classes: 'rounded'});
+        <?php }
+        } ?>
+    </script>
 </html>
