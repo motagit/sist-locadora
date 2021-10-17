@@ -15,10 +15,18 @@
     font-size: 22px;
     font-weight: 700;
     background-color: #1565C0;
+    display: flex;
+    flex-direction: column;
 }
 
 #btn-index:hover {
     background-color:#0f4685;
+}
+
+#btn-index i {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 40px;
 }
 
 /* Cadastro */

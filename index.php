@@ -27,13 +27,22 @@
         <div class="row">
           <ul class="menu">
             <li style="display: inline-block;">
-              <a class="waves-effect waves-light btn" id="btn-index" href="cadastroTitulo.php">Cadastro de Títulos</a>
+              <a class="waves-effect waves-light btn" id="btn-index" href="cadastroTitulo.php">
+                <i class="material-icons large">local_movies</i>
+                Cadastro de Títulos
+              </a>
             </li>
             <li style="display: inline-block;">
-              <a class="waves-effect waves-light btn" id="btn-index" href="cadastroCliente.php">Cadastro de Clientes</a>
+              <a class="waves-effect waves-light btn" id="btn-index" href="cadastroCliente.php">
+                <i class="material-icons large">person_add</i>
+                Cadastro de Clientes
+              </a>
             </li>
             <li style="display: inline-block;">
-              <a class="waves-effect waves-light btn" id="btn-index" href="controleLocacao.php">Controle de Locação</a>
+              <a class="waves-effect waves-light btn" id="btn-index" href="controleLocacao.php">
+                <i class="material-icons large">view_list</i>
+                Controle de Locação
+              </a>
             </li>
           </ul>
         </div>
