@@ -39,6 +39,7 @@ $finalizado = mysqli_query($conn, $sql);
     </head>
 
     <body>
+        
         <div class="container">
             <div class="row">
                 <div class="container">
@@ -68,6 +69,23 @@ $finalizado = mysqli_query($conn, $sql);
                             $nome_cliente_arr = mysqli_fetch_array($nome_cliente_sql);
                             $nome_cliente = $nome_cliente_arr[0];
                             ?>
+                            <div id="modal<?php echo $row['id'] ?>" class="modal">
+                                <div class="modal-content">
+                                    <h4>Devolução de Título</h4>
+                                    <p>Confirmar devolução de título?</p>
+                                        <div class="retirada">
+                                        <p><span>Nome do Cliente:</span> <?php echo $nome_cliente;?> </p>
+                                        <p><span>Nome do Título:</span> <?php echo $nome_titulo;?> </p>
+                                        <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
+                                        <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
+                                        <p><span>Valor Final:</span> R$<?php echo $row["valor_juros"];?> <small>(Valor Base: R$<?php echo $row["valor"]; ?>, Valor de Multa: R$<?php echo $difference*2;?>)</small></p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                                    <a class="waves-effect waves-light btn-flat" href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>">Confirmar</a>
+                                </div>
+                            </div>
                                 
                             <div class="retirada z-depth-1">
                                 <div class="atrasado">
@@ -83,7 +101,7 @@ $finalizado = mysqli_query($conn, $sql);
                                     <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
                                     <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
                                     <p><span>Valor Final:</span> R$<?php echo $row["valor_juros"];?> <small>(Valor Base: R$<?php echo $row["valor"]; ?>, Valor de Multa: R$<?php echo $difference*2;?>)</small></p>
-                                    <a class="btn waves-effect waves-light" href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>">Entregue</a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal<?php echo $row['id'] ?>">Finalizar</a>
                                 </li>
                             </div>
 
@@ -103,7 +121,23 @@ $finalizado = mysqli_query($conn, $sql);
                             $nome_cliente_arr = mysqli_fetch_array($nome_cliente_sql);
                             $nome_cliente = $nome_cliente_arr[0];
                         ?>
-                        
+                            <div id="modal<?php echo $row['id'] ?>" class="modal">
+                                <div class="modal-content">
+                                    <h4>Devolução de Título</h4>
+                                    <p>Confirmar devolução de título?</p>
+                                    <div class="retirada">
+                                        <p><span>Nome do Cliente:</span> <?php echo $nome_cliente;?> </p>
+                                        <p><span>Nome do Título:</span> <?php echo $nome_titulo;?> </p>
+                                        <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
+                                        <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
+                                        <p><span>Valor:</span> R$<?php echo $row["valor"];?></p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                                    <a class="waves-effect waves-light btn-flat" href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>">Confirmar</a>
+                                </div>
+                            </div>
                             <div class="retirada z-depth-1">
                                 <div class="andamento">
                                     <span>ID: <?php echo $row["id"];?></span>
@@ -118,7 +152,7 @@ $finalizado = mysqli_query($conn, $sql);
                                     <p><span>Data de Retirada:</span> <?php echo $row["data_ret"];?> </p>
                                     <p><span>Data de Entrega:</span> <?php echo $row["data_ent"];?> </p>
                                     <p><span>Valor:</span> R$<?php echo $row["valor"];?></p>
-                                    <a class="btn waves-effect waves-light" href="finalizarLocacao.php?id=<?php echo $row["id"]?>&id_titulo=<?php echo $row["id_titulo"] ?>">Entregue</a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal<?php echo $row['id'] ?>">Finalizar</a>
                                 </li>
                             </div>
 
@@ -167,6 +201,7 @@ $finalizado = mysqli_query($conn, $sql);
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/filtragem.js"></script>
     <script>
         <?php if (isset($_GET['cad'])) {

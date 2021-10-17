@@ -259,3 +259,8 @@ ul.dropdown-content.select-dropdown li:not(.disabled) span {
     height: 500px; 
     overflow-y:scroll;
 }
+
+/* materialize modal size */
+.modal { 
+    width: 40% !important ; 
+}

@@ -9,7 +9,5 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $('.modal').modal({
-        inDuration: 1000,
-    });
+    $('.modal').modal();
 });
