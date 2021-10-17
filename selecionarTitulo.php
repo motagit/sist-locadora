@@ -8,13 +8,11 @@ $result = mysqli_query($conn, $sql);
 <!DOCTYPE html>
 <html>
     <head>
-
       <title>Controle de Locadora</title>
 
       <link type="text/css" rel="stylesheet" href="css/style.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -26,7 +24,6 @@ $result = mysqli_query($conn, $sql);
           </ul>
         </div>
       </nav>
-        
     </head>
 
     <body>

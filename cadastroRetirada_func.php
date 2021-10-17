@@ -9,7 +9,6 @@ $valor = $_POST['valor'];
 
 $end = strtotime($dat_ent);
 $start = strtotime($dat_ret);
-$difference = $end - $start;
 
 if ($start > $end) {
     header('Location: cadastroRetirada.php?dt=no');

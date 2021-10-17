@@ -28,7 +28,6 @@ $result = mysqli_query($conn, $sql);
       </nav>
         
     </head>
-
     <body>
         <div class="container">
             <div class="row">
