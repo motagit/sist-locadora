@@ -90,4 +90,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        <?php if (isset($_GET['dt'])) {
+            if ($_GET['dt'] == 'no') { ?>
+                var toastOk = '<span><i class="material-icons left">error</i>A data de entrega não pode ser menor que a de retirada!</span>';
+                M.toast({html: toastOk, classes: 'rounded'});
+            <?php } 
+        } ?>
+    </script>
 </html>
